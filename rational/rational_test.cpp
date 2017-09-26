@@ -38,9 +38,31 @@ int main()
     m /= Rational(2, 3);
     cout << ":2/3   " << m << endl;
 
-    Rational d(2, -5);
+    Rational d(0, 5);
+    d.Normalize(d);
     cout << d << endl;
 
-    Rational er(1, 0);
+    Rational k(1, 3);
+    Rational* w(&k);
+    Rational q(*w);
+    cout << q << endl;
+    Rational p(4, 9);
+    Rational& s(p);
+    cout << s << endl;
+
+    bool t = Rational(1, 4) > Rational(1, 2);
+    cout << t << endl;
+
+    bool r = Rational(2, 5) < Rational(3, 5);
+    cout << r << endl;
+
+    bool y = Rational(1, 3) == Rational(2, 6);
+    cout << y << endl;
+
+    bool x = Rational(1, 3) != Rational(1, 2);
+    cout << x << endl;
+
+
+    //Rational er(1, 0);
     
 }

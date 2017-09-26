@@ -18,8 +18,10 @@ public:
 
     void Normalize(Rational& s);
     ~Rational() = default;
-    bool operator==(const Rational& rhs) const { return (num_ == rhs.num_) && (denum_ == rhs.denum_); }
-    bool operator!=(const Rational& rhs) const { return !operator==(rhs); }
+    bool operator==(const Rational& rhs);
+    bool operator!=(const Rational& rhs) { return !operator==(rhs); }
+    bool operator>(const Rational& rhs);
+    bool operator<(const Rational& rhs) { return !operator>(rhs); };
     Rational& operator+=(const Rational& rhs);
     Rational& operator-=(const Rational& rhs);
     Rational& operator*=(const Rational& rhs);
@@ -41,6 +43,8 @@ Rational operator+(const Rational& lhs, const Rational& rhs);
 Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
+
+
 
 inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs)
 {

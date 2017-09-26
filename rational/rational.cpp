@@ -20,9 +20,9 @@ int nod(int& a, int& b)
         a1 = b1;
         b1 = t;
     }
-    while (a1%b1 != 0)
+    while (a1 % b1 != 0)
     {
-        a1 = a1%b1;
+        a1 = a1 % b1;
         int t = a1;
         a1 = b1;
         b1 = t;
@@ -100,6 +100,19 @@ Rational operator/(const Rational& lhs, const Rational& rhs)
     del /= rhs;
     return del;
 }
+
+bool Rational::operator>(const Rational& rhs)
+{
+    bool t = num_ * rhs.denum_ > denum_ * rhs.num_;
+    return t;
+}
+
+bool Rational::operator==(const Rational& rhs)
+{
+    bool t = num_ * rhs.denum_ == denum_ * rhs.num_;
+    return t;
+}
+
 
 std::ostream& Rational::writeTo(std::ostream& ostrm) const
 {
