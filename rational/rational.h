@@ -10,22 +10,31 @@ public:
     Rational(const int num) : num_(num) {}
     Rational::Rational(const int num, const int denum) : num_(num), denum_(denum)
     {
-        if (denum == 0)
+        /*if (denum == 0)
         {
             throw std::invalid_argument("Error!");
-        }
+        }*/
     }
 
-    void Normalize(Rational& s);
     ~Rational() = default;
     bool operator==(const Rational& rhs);
     bool operator!=(const Rational& rhs) { return !operator==(rhs); }
     bool operator>(const Rational& rhs);
     bool operator<(const Rational& rhs) { return !operator>(rhs); };
+
     Rational& operator+=(const Rational& rhs);
+    Rational& operator+=(const int rhs) { return operator+=(Rational(rhs)); }
+    Rational& operator+=(const double rhs);
     Rational& operator-=(const Rational& rhs);
+    Rational& operator-=(const int rhs) { return operator-=(Rational(rhs)); }
+    Rational& operator-=(const double rhs);
     Rational& operator*=(const Rational& rhs);
+    Rational& operator*=(const double rhs);
     Rational& operator/=(const Rational& rhs);
+    Rational& operator/=(const double rhs);
+    Rational& operator^(const int k);
+
+    void normalize(Rational& s);
 
     static const char leftBrace{ '{' };
     static const char separator{ '/' };

@@ -30,7 +30,7 @@ int nod(int& a, int& b)
     return abs(b1);
 }
 
-void Rational::Normalize(Rational& s)
+void Rational::normalize(Rational& s)
 {
     int k = nod(s.num_, s.denum_);
     s = Rational(s.num_ / k, s.denum_ / k);
@@ -41,11 +41,39 @@ void Rational::Normalize(Rational& s)
     }
 }
 
+Rational& Rational::operator^(const int k)
+{
+    Rational res;
+    res.num_ = pow(num_, k);
+    res.denum_ = pow(denum_, k);
+    normalize(res);
+    return res;
+}
+
 Rational& Rational::operator+=(const Rational& rhs)
 {
     num_ = num_ * rhs.denum_ + rhs.num_ * denum_;
     denum_ *= rhs.denum_;
-    Normalize(*this);
+    normalize(*this);
+    return *this;
+}
+
+Rational& Rational::operator+=(const double rhs)
+{
+    double a(rhs);
+    double cel;
+    int den = 1;
+    double j = modf(a, &cel);
+    while (j < 1 && j != 0)
+    {
+        a *= 10;
+        den *= 10;
+        j = modf(a, &cel);
+    }
+    Rational b = Rational(a, den);
+    num_ = num_ * den + a * denum_;
+    denum_ = denum_ * den;
+    normalize(*this);
     return *this;
 }
 
@@ -60,7 +88,7 @@ Rational& Rational::operator-=(const Rational& rhs)
 {
     num_ = num_ * rhs.denum_ - rhs.num_ * denum_;
     denum_ *= rhs.denum_;
-    Normalize(*this);
+    normalize(*this);
     return *this;
 }
 
@@ -71,11 +99,30 @@ Rational operator-(const Rational& lhs, const Rational& rhs)
     return raz;
 }
 
+Rational& Rational::operator-=(const double rhs)
+{
+    double a(rhs);
+    double cel;
+    int den = 1;
+    double j = modf(a, &cel);
+    while (j < 1 && j != 0)
+    {
+        a *= 10;
+        den *= 10;
+        j = modf(a, &cel);
+    }
+    Rational b = Rational(a, den);
+    num_ = num_ * den - a * denum_;
+    denum_ = denum_ * den;
+    normalize(*this);
+    return *this;
+}
+
 Rational& Rational::operator*=(const Rational& rhs)
 {
     num_ *= rhs.num_;
     denum_ *= rhs.denum_;
-    Normalize(*this);
+    normalize(*this);
     return *this;
 }
 
@@ -86,11 +133,30 @@ Rational operator*(const Rational& lhs, const Rational& rhs)
     return mul;
 }
 
+Rational& Rational::operator*=(const double rhs)
+{
+    double a(rhs);
+    double cel;
+    int den = 1;
+    double j = modf(a, &cel);
+    while (j < 1 && j != 0)
+    {
+        a *= 10;
+        den *= 10;
+        j = modf(a, &cel);
+    }
+    Rational b = Rational(a, den);
+    num_ = num_ * a;
+    denum_ = denum_ * den;
+    normalize(*this);
+    return *this;
+}
+
 Rational& Rational::operator/=(const Rational& rhs)
 {
     num_ *= rhs.denum_;
     denum_ *= rhs.num_;
-    Normalize(*this);
+    normalize(*this);
     return *this;
 }
 
@@ -99,6 +165,25 @@ Rational operator/(const Rational& lhs, const Rational& rhs)
     Rational del(lhs);
     del /= rhs;
     return del;
+}
+
+Rational& Rational::operator/=(const double rhs)
+{
+    double a(rhs);
+    double cel;
+    int den = 1;
+    double j = modf(a, &cel);
+    while (j < 1 && j != 0)
+    {
+        a *= 10;
+        den *= 10;
+        j = modf(a, &cel);
+    }
+    Rational b = Rational(a, den);
+    num_ = num_ * den;
+    denum_ = denum_ * a;
+    normalize(*this);
+    return *this;
 }
 
 bool Rational::operator>(const Rational& rhs)

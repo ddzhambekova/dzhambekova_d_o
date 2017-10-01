@@ -15,6 +15,13 @@ Complex::Complex(const double real, const double imaginary)
 {
 }
 
+const double dif(1.0e-7);
+
+bool Complex::operator==(const Complex& rhs) const
+{
+    return (abs(re - rhs.re) < dif) && (abs(im - rhs.im) < dif);
+}
+
 Complex& Complex::operator+=(const Complex& rhs)
 {
     re += rhs.re;
@@ -23,6 +30,13 @@ Complex& Complex::operator+=(const Complex& rhs)
 }
 
 Complex operator+(const Complex& lhs, const Complex& rhs)
+{
+    Complex sum(lhs);
+    sum += rhs;
+    return sum;
+}
+
+Complex operator+(const double rhs, const Complex& lhs)
 {
     Complex sum(lhs);
     sum += rhs;
@@ -84,6 +98,25 @@ Complex operator/(const Complex& lhs, const Complex& rhs)
     res.im = (rhs.re * lhs.im - lhs.re * rhs. im) / (lhs.im * lhs.im + rhs.im * rhs.im);
     return res;
 }
+
+Complex& Complex::operator^(const int k)
+{
+    double z(sqrt(re * re + im * im));
+    double f = atan(im / re);
+    double m(pow(z, k));
+    Complex res;
+    res.re = m*cos(f * k);
+    res.im = m*sin(f * k);
+    return res;
+}
+
+//Complex sopr(const Complex& rhs)
+//{
+//    Complex q;
+//    q.re = rhs.re;
+//    q.im = -rhs.im;
+//    return q;
+//}
 
 std::ostream& Complex::writeTo(std::ostream& ostrm) const
 {
