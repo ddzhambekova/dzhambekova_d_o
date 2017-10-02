@@ -15,13 +15,6 @@ Complex::Complex(const double real, const double imaginary)
 {
 }
 
-const double dif(1.0e-7);
-
-bool Complex::operator==(const Complex& rhs) const
-{
-    return (abs(re - rhs.re) < dif) && (abs(im - rhs.im) < dif);
-}
-
 Complex& Complex::operator+=(const Complex& rhs)
 {
     re += rhs.re;
