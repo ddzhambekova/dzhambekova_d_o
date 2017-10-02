@@ -6,8 +6,8 @@ struct Complex {
     Complex() {}
     explicit Complex(const double real);
     Complex(const double real, const double imaginary);
-    bool operator==(const Complex& rhs) const;
-    bool operator!=(const Complex& rhs) const { return !operator==(rhs); };
+    //bool operator==(const Complex& rhs) const;
+    //bool operator!=(const Complex& rhs) const { return !operator==(rhs); };
     Complex& operator+=(const Complex& rhs);
     Complex& operator+=(const double rhs) { return operator+=(Complex(rhs)); }
     Complex& operator-=(const Complex& rhs);
