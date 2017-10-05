@@ -15,6 +15,13 @@ Complex::Complex(const double real, const double imaginary)
 {
 }
 
+bool Complex::operator==(const Complex& rhs) const
+{
+    double h = pow(10, -5);
+    bool t = (abs(re - rhs.re) <= h) && (abs(im - rhs.im) <= h);
+    return t;
+}
+
 Complex& Complex::operator+=(const Complex& rhs)
 {
     re += rhs.re;
@@ -103,13 +110,10 @@ Complex& Complex::operator^(const int k)
     return res;
 }
 
-//Complex sopr(const Complex& rhs)
-//{
-//    Complex q;
-//    q.re = rhs.re;
-//    q.im = -rhs.im;
-//    return q;
-//}
+Complex Complex::sopr() const
+{
+    return Complex(re, -im);
+}
 
 std::ostream& Complex::writeTo(std::ostream& ostrm) const
 {

@@ -42,9 +42,10 @@ int main()
     cout << "Substraction int z - 1\n" << z << endl;
     Complex w(z ^ 2);
     cout << "Exponentiation z^2\n" << w << endl;
-    //Complex wsopr(w.sopr);
-    //cout << "Complex sopryazhennoe z" << wsopr << endl;
-    
+    Complex wsopr(w.sopr());
+    cout << "Complex sopryazhennoe z\n" << wsopr << endl;
+    bool p = (z == w);
+    cout << "z == w\n" << p << endl;
 
     testParse("{8.9,9}");
     testParse("{8.9, 9}");

@@ -15,7 +15,9 @@ public:
             throw std::invalid_argument("Error!");
         }*/
     }
-
+    Rational(const Rational& rhs) : num_(rhs.num_), denum_(rhs.denum_)
+    {
+    }
     ~Rational() = default;
     bool operator==(const Rational& rhs);
     bool operator!=(const Rational& rhs) { return !operator==(rhs); }
