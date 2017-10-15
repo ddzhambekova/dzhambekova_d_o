@@ -47,6 +47,10 @@ public:
     double y_{ 0.0 };
     double z_{ 0.0 };
 };
+Vec3d operator+(const Vec3d& rhs, const Vec3d& lhs);
+Vec3d operator-(const Vec3d& rhs, const Vec3d& lhs);
+Vec3d operator*(const Vec3d& rhs, const double d);
+Vec3d operator/(const Vec3d& rhs, const double d);
 
 inline std::ostream& operator<<(std::ostream& ostrm, const Vec3d& rhs)
 {

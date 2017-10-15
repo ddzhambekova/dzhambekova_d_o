@@ -55,8 +55,6 @@ Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
 
-
-
 inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs)
 {
     return rhs.writeTo(ostrm);

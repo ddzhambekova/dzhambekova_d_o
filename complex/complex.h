@@ -30,6 +30,10 @@ struct Complex {
     static const char separator{ ',' };
     static const char rightBrace{ '}' };
 };
+Complex operator+(const Complex& lhs, const Complex& rhs);
+Complex operator-(const Complex& lhs, const Complex& rhs);
+Complex operator*(const Complex& lhs, const Complex& rhs);
+Complex operator/(const Complex& lhs, const Complex& rhs);
 
 inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs)
 {

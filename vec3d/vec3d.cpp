@@ -5,7 +5,9 @@
 
 bool Vec3d::operator==(const Vec3d& rhs)
 {
-    return ((x_ == rhs.x_) && (y_ == rhs.y_) && (z_ == rhs.z_));
+    double h = pow(10, -5);
+    bool t = (abs(x_ - rhs.x_) <= h) && (abs(y_ - rhs.y_) <= h) && (abs(z_ == rhs.z_));
+    return t;
 }
 
 Vec3d Vec3d::operator+=(const Vec3d& rhs)
@@ -19,8 +21,7 @@ Vec3d Vec3d::operator+=(const Vec3d& rhs)
 Vec3d operator+(const Vec3d& rhs, const Vec3d& lhs)
 {
     Vec3d sum(rhs);
-    sum += lhs;
-    return sum;
+    return (sum += lhs);
 }
 
 Vec3d Vec3d::operator-=(const Vec3d& rhs)
@@ -34,8 +35,7 @@ Vec3d Vec3d::operator-=(const Vec3d& rhs)
 Vec3d operator-(const Vec3d& rhs, const Vec3d& lhs)
 {
     Vec3d dif(rhs);
-    dif -= lhs;
-    return dif;
+    return (dif -= lhs);
 }
 
 Vec3d Vec3d::operator*=(const double d)
@@ -46,11 +46,10 @@ Vec3d Vec3d::operator*=(const double d)
     return *this;
 }
 
-Vec3d operator*(const Vec3d rhs, const double d)
+Vec3d operator*(const Vec3d& rhs, const double d)
 {
     Vec3d u(rhs);
-    u *= d;
-    return u;
+    return (u *= d);
 }
 
 Vec3d Vec3d::operator/=(const double d)
@@ -64,8 +63,7 @@ Vec3d Vec3d::operator/=(const double d)
 Vec3d operator/(const Vec3d& rhs, const double d)
 {
     Vec3d r(rhs);
-    r /= d;
-    return r;
+    return (r /= d);
 }
 
 double Vec3d::module()
