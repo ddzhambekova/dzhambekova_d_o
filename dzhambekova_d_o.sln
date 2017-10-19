@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vec3d", "vec3d\vec3d.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vec3dt", "vec3dt\vec3dt.vcxproj", "{6CF8CBB3-38C7-4224-9F21-3795723A1A50}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kvaternion", "kvaternion\kvaternion.vcxproj", "{90033187-D690-4D0A-AD31-D76649E4340D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{6CF8CBB3-38C7-4224-9F21-3795723A1A50}.Release|x64.Build.0 = Release|x64
 		{6CF8CBB3-38C7-4224-9F21-3795723A1A50}.Release|x86.ActiveCfg = Release|Win32
 		{6CF8CBB3-38C7-4224-9F21-3795723A1A50}.Release|x86.Build.0 = Release|Win32
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Debug|x64.ActiveCfg = Debug|x64
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Debug|x64.Build.0 = Debug|x64
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Debug|x86.ActiveCfg = Debug|Win32
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Debug|x86.Build.0 = Debug|Win32
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Release|x64.ActiveCfg = Release|x64
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Release|x64.Build.0 = Release|x64
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Release|x86.ActiveCfg = Release|Win32
+		{90033187-D690-4D0A-AD31-D76649E4340D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
