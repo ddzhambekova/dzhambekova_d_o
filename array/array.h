@@ -38,12 +38,12 @@ public:
     {
         for (int i = 0; i < size_; i++)
         {
-            a.pdata_[i] = pdata_[i];
+            pdata_[i] = a.pdata_[i];
         }
         return *this;
     }
-    int getsize(); //размер массива
-    void resize(const int& nsize);
+    ptrdiff_t getsize(); //размер массива
+    void resize(const ptrdiff_t& nsize);
     void insert(const int ind, const int s);
     void remove(const int ind);
     void insertAr(const int ind, Array ar);

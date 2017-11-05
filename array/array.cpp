@@ -1,5 +1,6 @@
 #include "array.h"
 
+
 int& Array::operator[](const ptrdiff_t index)
 {
     return pdata_[index];
@@ -10,33 +11,12 @@ const int& Array::operator[](const ptrdiff_t index) const
     return pdata_[index];
 }
 
-int Array::getsize()
+ptrdiff_t Array::getsize()
 {
     return size_;
 }
 
-//Array Array::resize(const int nsize)
-//{
-//    Array r(nsize);
-//    if (nsize > size_)
-//    {
-//        for (int i = 0; i < size_; i++)
-//        {
-//            r.pdata_[i] = pdata_[i];
-//        }
-//        delete[] pdata_;
-//        pdata_ = r.pdata_;
-//        size_ = nsize;
-//    }
-//    else
-//    {
-//        size_ = nsize;
-//    }
-//    pdata_ = r.pdata_;
-//    return *this;
-//}
-
-void Array::resize(const int& nsize) 
+void Array::resize(const ptrdiff_t& nsize)
 {
     if (size_ < nsize)
     {
