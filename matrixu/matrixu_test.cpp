@@ -22,15 +22,16 @@ int main()
     cout << b << endl;
     MatrixU c(3, 1);
     c.at(0, 0) = 2;
-    c.at(0, 1) = 3;
-    c.at(0, 2) = 4;
+    c.at(1, 0) = 3;
+    c.at(2, 0) = 4;
+    cout << c << endl;
     cout << a.isSizeEqual(b) << endl;
-    //a += b;
-    //cout << a << endl;
-    //a -= b;
-    //cout << a << endl;
-    //MatrixU r(a * c);
-    //cout << r << endl;
+    a += b;
+    cout << a << endl;
+    a -= b;
+    cout << a << endl;
+    MatrixU r(a * c);
+    cout << r << endl;
 
 
     return 0;

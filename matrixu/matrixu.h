@@ -22,7 +22,7 @@ public:
         nRow_ = nRow;
         nCol_ = nCol;
         pdata_ = new int[nRow_*nCol_];
-        for (int i = 0; i < nRow_ * nCol_; i++)
+        for (ptrdiff_t i = 0; i < nRow_ * nCol_; i++)
             pdata_[i] = 0;
     }
     MatrixU(const MatrixU& m)
@@ -30,21 +30,21 @@ public:
         nRow_ = m.nRow_;
         nCol_ = m.nCol_;
         pdata_ = new int[nRow_*nCol_];
-        for (int i = 0; i < nRow_ * nCol_; i++)
+        for (ptrdiff_t i = 0; i < nRow_ * nCol_; i++)
             pdata_[i] = m.pdata_[i];
     }
     MatrixU operator=(const MatrixU& m)
     {
-        for (int i = 0; i < nRow_*nCol_; i++)
+        for (ptrdiff_t i = 0; i < nRow_*nCol_; i++)
             pdata_[i] = m.pdata_[i];
         return *this;
     }
     bool isSizeEqual(const MatrixU& m);
     MatrixU operator+=(const MatrixU& m);
     MatrixU operator-=(const MatrixU& m);
-    //const bool isMultiplicationPossible(const MatrixU& m) const;
-    //const ptrdiff_t getnRow() const;
-    //ptrdiff_t getnCol();
+    const bool isMultiplicationPossible(const MatrixU& m) const;
+    const ptrdiff_t getnRow() const;
+    ptrdiff_t getnCol();
 
     std::ostream& writeTo(std::ostream& ostrm) const;
 
@@ -53,7 +53,7 @@ private:
     ptrdiff_t nCol_{ 0 };
     int* pdata_{ nullptr };
 };
-//MatrixU operator*(const MatrixU& m, const MatrixU& n);
+MatrixU operator*(const MatrixU& m, const MatrixU& n);
 
 inline std::ostream& operator<<(std::ostream& ostrm, const MatrixU& rhs)
 {
