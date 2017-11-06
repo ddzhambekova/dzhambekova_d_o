@@ -20,6 +20,10 @@ int main()
     b.at(1, 1) = 4;
     b.at(1, 2) = 2;
     cout << b << endl;
+    MatrixU d = a;
+    cout << d << endl;
+    MatrixU l(a);
+    cout << l << endl;
     MatrixU c(3, 1);
     c.at(0, 0) = 2;
     c.at(1, 0) = 3;

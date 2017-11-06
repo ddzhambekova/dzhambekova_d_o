@@ -44,7 +44,7 @@ public:
     MatrixU operator-=(const MatrixU& m);
     const bool isMultiplicationPossible(const MatrixU& m) const;
     const ptrdiff_t getnRow() const;
-    ptrdiff_t getnCol();
+    const ptrdiff_t getnCol() const;
 
     std::ostream& writeTo(std::ostream& ostrm) const;
 

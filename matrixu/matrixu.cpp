@@ -67,13 +67,13 @@ const ptrdiff_t MatrixU::getnRow() const
 {
     return nRow_;
 }
-ptrdiff_t MatrixU::getnCol()
+const ptrdiff_t MatrixU::getnCol() const
 {
     return nCol_;
 }
 
 
-MatrixU operator*(MatrixU& m, MatrixU& n)
+MatrixU operator*(const MatrixU& m, const MatrixU& n)
 {
     if (1 == m.isMultiplicationPossible(n))
     {

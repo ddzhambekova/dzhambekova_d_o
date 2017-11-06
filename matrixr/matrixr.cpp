@@ -65,16 +65,16 @@ const bool MatrixR::isMultiplicationPossible(const MatrixR& m) const
     return (nCol_ == m.nRow_);
 }
 
-ptrdiff_t MatrixR::getnRow()
+const ptrdiff_t MatrixR::getnRow() const
 {
     return nRow_;
 }
-ptrdiff_t MatrixR::getnCol()
+const ptrdiff_t MatrixR::getnCol() const
 {
     return nCol_;
 }
 
-MatrixR operator*(MatrixR& m, MatrixR& n)
+MatrixR operator*(const MatrixR& m, const MatrixR& n)
 {
     if (1 == m.isMultiplicationPossible(n))
     {
@@ -83,6 +83,7 @@ MatrixR operator*(MatrixR& m, MatrixR& n)
         {
             for (ptrdiff_t j = 0; j < res.getnCol(); j++)
             {
+                res.at(i, j) = 0;
                 for (ptrdiff_t t = 0; t < m.getnCol(); t++)
                     res.at(i, j) += m.at(i, t) * n.at(t, j);
             }

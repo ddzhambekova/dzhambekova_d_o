@@ -11,9 +11,9 @@ public:
     {
         pRows_ = new int*[nRow_];
         pRows_[0] = new int[nRow_ * nCol_];
-        for (ptrdiff_t i = 0; i < nRow_ * nCol_; i++)
+        for (ptrdiff_t i = 0; i < nCol_ - 2; i++)
         {
-            pRows_[i + 1] = pRows_[i + nCol_];
+            pRows_[i + 1] = pRows_[i] + nCol_;
         }
     }
     ~MatrixR()
@@ -39,19 +39,28 @@ public:
         pRows_ = new int*[nRow_];
         for (ptrdiff_t i = 0; i < nRow_; i++)
             pRows_[i] = new int[nCol_];
+        for (ptrdiff_t i = 0; i < nRow_; i++)
+            for (ptrdiff_t j = 0; j < nCol_; j++)
+                pRows_[i][j] = m.pRows_[i][j];
     }
     MatrixR operator=(const MatrixR& m)
     {
+        nRow_ = m.nRow_;
+        nCol_ = m.nCol_;
+        pRows_ = new int*[nRow_];
         for (ptrdiff_t i = 0; i < nRow_; i++)
             pRows_[i] = new int[nCol_];
+        for (ptrdiff_t i = 0; i < nRow_; i++)
+            for (ptrdiff_t j = 0; j < nCol_; j++)
+                pRows_[i][j] = m.pRows_[i][j];
         return *this;
     }
     bool isSizeEqual(const MatrixR& m);
     MatrixR operator+=(const MatrixR& m);
     MatrixR operator-=(const MatrixR& m);
     const bool isMultiplicationPossible(const MatrixR& m) const;
-    ptrdiff_t getnRow();
-    ptrdiff_t getnCol();
+    const ptrdiff_t getnRow() const;
+    const ptrdiff_t getnCol() const;
 
     std::ostream& writeTo(std::ostream& ostrm) const;
 
