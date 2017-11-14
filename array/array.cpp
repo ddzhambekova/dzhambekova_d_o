@@ -21,7 +21,7 @@ void Array::resize(const ptrdiff_t& nsize)
     if (size_ < nsize)
     {
         int* newdata = new int[nsize];
-        for (int i = 0; i < size_; i++)
+        for (int i = 0; i < size_; i += 1)
         {
             newdata[i] = pdata_[i];
         }
@@ -32,7 +32,7 @@ void Array::resize(const ptrdiff_t& nsize)
     else
     {
         int* newdata = new int[nsize];
-        for (int i = 0; i < nsize; i++)
+        for (int i = 0; i < nsize; i += 1)
         {
             newdata[i] = pdata_[i];
         }
@@ -45,11 +45,11 @@ void Array::resize(const ptrdiff_t& nsize)
 void Array::insert(const int ind, const int s)
 {
     int* newdata = new int[size_ + 1];
-    for (int i = 0; i < size_; i++)
+    for (int i = 0; i < size_; i += 1)
     {
         newdata[i] = pdata_[i];
     }
-    for (int i = size_; i > ind; i--)
+    for (int i = size_; i > ind; i -= 1)
     {
         newdata[i] = newdata[i - 1];
     }
@@ -61,19 +61,19 @@ void Array::insert(const int ind, const int s)
 void Array::insertAr(const int ind, Array ar)
 {
     int* newdata = new int[size_ + ar.size_];
-    for (int i = 0; i < size_; i++)
+    for (int i = 0; i < size_; i += 1)
     {
         newdata[i] = pdata_[i];
     }
-    for (int i = size_ + ar.size_ - 1; i > ind + ar.size_ - 1; i--)
+    for (int i = size_ + ar.size_ - 1; i > ind + ar.size_ - 1; i -= 1)
     {
         newdata[i] = newdata[i - ar.size_];
     }
     int t = 0;
-    for (int i = ind; i < ind + ar.size_; i++)
+    for (int i = ind; i < ind + ar.size_; i += 1)
     {
         newdata[i] = ar.pdata_[t];
-        t++;
+        t += 1;
     }
     size_ += ar.size_;
     pdata_ = newdata;
@@ -82,11 +82,11 @@ void Array::insertAr(const int ind, Array ar)
 void Array::remove(const int ind)
 {
     int* newdata = new int[size_];
-    for (int i = 0; i < size_; i++)
+    for (int i = 0; i < size_; i += 1)
     {
         newdata[i] = pdata_[i];
     }
-    for (int i = ind; i < size_ - 1; i++)
+    for (int i = ind; i < size_ - 1; i += 1)
     {
         newdata[i] = newdata[i + 1];
     }
@@ -97,11 +97,11 @@ void Array::remove(const int ind)
 void Array::removeAr(const int ind, const int k)
 {
     int* newdata = new int[size_];
-    for (int i = 0; i < size_; i++)
+    for (int i = 0; i < size_; i += 1)
     {
         newdata[i] = pdata_[i];
     }
-    for (int i = ind; i < ind + k; i++)
+    for (int i = ind; i < ind + k; i += 1)
     {
         newdata[i] = newdata[i + k];
     }
@@ -113,7 +113,7 @@ void Array::removeAr(const int ind, const int k)
 std::ostream& Array::writeTo(std::ostream& ostrm) const
 {
     ostrm << leftBrace;
-    for (int i = 0; i < size_ - 1; i++)
+    for (int i = 0; i < size_ - 1; i += 1)
     {
         ostrm << pdata_[i] << separator;
     }

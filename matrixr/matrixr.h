@@ -9,17 +9,16 @@ class MatrixR
 public:
     MatrixR()
     {
-        pRows_ = new int*[nRow_];
+        pRows_ = new int * [nRow_];
         pRows_[0] = new int[nRow_ * nCol_];
-        for (ptrdiff_t i = 0; i < nCol_ - 2; i++)
+        for (ptrdiff_t i = 0; i < nCol_ - 2; i += 1)
         {
             pRows_[i + 1] = pRows_[i] + nCol_;
         }
     }
     ~MatrixR()
     {
-        for (ptrdiff_t i = 0; i < nRow_; i++)
-            delete[] pRows_[i];
+        delete[] pRows_[0];
         delete[] pRows_;
     }
     int& at(const ptrdiff_t iRow, const ptrdiff_t iCol);
@@ -28,19 +27,19 @@ public:
     {
         nRow_ = nRow;
         nCol_ = nCol;
-        pRows_ = new int*[nRow];
-        for (ptrdiff_t i = 0; i < nRow; i++)
+        pRows_ = new int * [nRow];
+        for (ptrdiff_t i = 0; i < nRow; i += 1)
             pRows_[i] = new int[nCol];
     }
     MatrixR(const MatrixR& m)
     {
         nRow_ = m.nRow_;
         nCol_ = m.nCol_;
-        pRows_ = new int*[nRow_];
-        for (ptrdiff_t i = 0; i < nRow_; i++)
+        pRows_ = new int * [nRow_];
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
             pRows_[i] = new int[nCol_];
-        for (ptrdiff_t i = 0; i < nRow_; i++)
-            for (ptrdiff_t j = 0; j < nCol_; j++)
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
+            for (ptrdiff_t j = 0; j < nCol_; j += 1)
                 pRows_[i][j] = m.pRows_[i][j];
     }
     MatrixR operator=(const MatrixR& m)
@@ -48,10 +47,10 @@ public:
         nRow_ = m.nRow_;
         nCol_ = m.nCol_;
         pRows_ = new int*[nRow_];
-        for (ptrdiff_t i = 0; i < nRow_; i++)
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
             pRows_[i] = new int[nCol_];
-        for (ptrdiff_t i = 0; i < nRow_; i++)
-            for (ptrdiff_t j = 0; j < nCol_; j++)
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
+            for (ptrdiff_t j = 0; j < nCol_; j += 1)
                 pRows_[i][j] = m.pRows_[i][j];
         return *this;
     }

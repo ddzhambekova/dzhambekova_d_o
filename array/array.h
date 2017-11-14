@@ -13,7 +13,7 @@ public:
     {
         size_ = 1;
         pdata_ = new int[size_];
-        for (int i = 0; i < size_; i++)
+        for (int i = 0; i < size_; i += 1)
             pdata_[i] = 0;
     }
     ~Array() //деструктор
@@ -24,19 +24,19 @@ public:
     {
         size_ = a.size_;
         pdata_ = new int[size_];
-        for (int i = 0; i < size_; i++)
+        for (int i = 0; i < size_; i += 1)
             pdata_[i] = a.pdata_[i];
     }
     Array(int n) //создание массива с заданным размером
     {
         size_ = n;
         pdata_ = new int[size_];
-        for (int i = 0; i < size_; i++)
+        for (int i = 0; i < size_; i += 1)
             pdata_[i] = 0;
     }
     Array operator=(const Array& a) //оператор присваивания
     {
-        for (int i = 0; i < size_; i++)
+        for (int i = 0; i < size_; i += 1)
         {
             pdata_[i] = a.pdata_[i];
         }
