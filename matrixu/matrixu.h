@@ -45,7 +45,6 @@ public:
     const bool isMultiplicationPossible(const MatrixU& m) const;
     const ptrdiff_t getnRow() const;
     const ptrdiff_t getnCol() const;
-    void resize(const ptrdiff_t newRow, const ptrdiff_t newCol);
 
     std::ostream& writeTo(std::ostream& ostrm) const;
 

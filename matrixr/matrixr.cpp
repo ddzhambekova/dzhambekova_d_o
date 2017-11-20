@@ -2,38 +2,24 @@
 
 int& MatrixR::at(const ptrdiff_t iRow, const ptrdiff_t iCol)
 {
-    try
+    if (iRow >= 0 && iCol >= 0 && iRow < nRow_ && iCol < nCol_)
     {
-        if (iRow >= 0 && iCol >= 0 && iRow < nRow_ && iCol < nCol_)
-        {
-            return pRows_[iRow][iCol];
-        }
-        else
-        {
-            throw 123;
-        }
+        return pRows_[iRow][iCol];
     }
-    catch (int er)
+    else
     {
-        std::cout << "error " << er << ": index is out of matrix" << std::endl;
+        throw 123;
     }
 }
 const int& MatrixR::at(const ptrdiff_t iRow, const ptrdiff_t iCol) const
 {
-    try
+    if (iRow >= 0 && iCol >= 0 && iRow < nRow_ && iCol < nCol_)
     {
-        if (iRow >= 0 && iCol >= 0 && iRow < nRow_ && iCol < nCol_)
-        {
-            return pRows_[iRow][iCol];
-        }
-        else
-        {
-            throw 124;
-        }
+        return pRows_[iRow][iCol];
     }
-    catch (int er)
+    else
     {
-        std::cout << "error " << er << ": index is out of matrix" << std::endl;
+        throw 124;
     }
 }
 
@@ -44,47 +30,33 @@ bool MatrixR::isSizeEqual(const MatrixR& m)
 
 MatrixR MatrixR::operator+=(const MatrixR& m)
 {
-    try
+    MatrixR w(nRow_, nCol_);
+    if (1 == w.isSizeEqual(m))
     {
-        MatrixR w(nRow_, nCol_);
-        if (1 == w.isSizeEqual(m))
-        {
-            for (ptrdiff_t i = 0; i < nRow_; i += 1)
-                for (ptrdiff_t j = 0; j < nCol_; j += 1)
-                    pRows_[i][j] += m.pRows_[i][j];
-            return *this;
-        }
-        else
-        {
-            throw 202;
-        }
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
+            for (ptrdiff_t j = 0; j < nCol_; j += 1)
+                pRows_[i][j] += m.pRows_[i][j];
+        return *this;
     }
-    catch (int er)
+    else
     {
-        std::cout << "error " << er << ": different size, addition is impossible" << std::endl;
+        throw 202;
     }
 }
 
 MatrixR MatrixR::operator-=(const MatrixR& m)
 {
-    try
+    MatrixR w(nRow_, nCol_);
+    if (1 == w.isSizeEqual(m))
     {
-        MatrixR w(nRow_, nCol_);
-        if (1 == w.isSizeEqual(m))
-        {
-            for (ptrdiff_t i = 0; i < nRow_; i += 1)
-                for (ptrdiff_t j = 0; j < nCol_; j += 1)
-                    pRows_[i][j] -= m.pRows_[i][j];
-            return *this;
-        }
-        else
-        {
-            throw 203;
-        }
+        for (ptrdiff_t i = 0; i < nRow_; i += 1)
+            for (ptrdiff_t j = 0; j < nCol_; j += 1)
+                pRows_[i][j] -= m.pRows_[i][j];
+        return *this;
     }
-    catch (int er)
+    else
     {
-        std::cout << "error " << er << ": different size, subtraction is impossible" << std::endl;
+        throw 203;
     }
 }
 
@@ -104,30 +76,23 @@ const ptrdiff_t MatrixR::getnCol() const
 
 MatrixR operator*(const MatrixR& m, const MatrixR& n)
 {
-    try
+    if (m.isMultiplicationPossible(n))
     {
-        if (m.isMultiplicationPossible(n))
+        MatrixR res(m.getnRow(), n.getnCol());
+        for (ptrdiff_t i = 0; i < res.getnRow(); i += 1)
         {
-            MatrixR res(m.getnRow(), n.getnCol());
-            for (ptrdiff_t i = 0; i < res.getnRow(); i += 1)
+            for (ptrdiff_t j = 0; j < res.getnCol(); j += 1)
             {
-                for (ptrdiff_t j = 0; j < res.getnCol(); j += 1)
-                {
-                    res.at(i, j) = 0;
-                    for (ptrdiff_t t = 0; t < m.getnCol(); t += 1)
-                        res.at(i, j) += m.at(i, t) * n.at(t, j);
-                }
+                res.at(i, j) = 0;
+                for (ptrdiff_t t = 0; t < m.getnCol(); t += 1)
+                    res.at(i, j) += m.at(i, t) * n.at(t, j);
             }
-            return res;
         }
-        else
-        {
-            throw 505;
-        }
+        return res;
     }
-    catch (int er)
+    else
     {
-        std::cout << "error " << er << ": matrix multiplication is impossible" << std::endl;
+        throw 505;
     }
 }
 
