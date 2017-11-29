@@ -32,6 +32,7 @@ private:
             , data_(v)
         {
         }
+        Node() = default;
         Node* pNext_{ nullptr };
         int data_{ int(0) };
     };

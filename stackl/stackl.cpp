@@ -7,42 +7,23 @@ bool StackL::isEmpty() const
 
 StackL StackL::operator=(const StackL& s)
 {
-    StackL tempstack;
-    Node* p = s.pHead_;
-    while (p != NULL)
-    {
-        tempstack.push(p->data_);
-        p = p->pNext_;
-    }
-    p = tempstack.pHead_;
-    while (p != NULL)
-    {
-        push(p->data_);
-        p = p->pNext_;
-    }
+
     return *this;
 }
 
 StackL::StackL(const StackL& s)
 {
-    StackL tempstack;
-    Node* p = s.pHead_;
-    while (p != NULL)
-    {
-        tempstack.push(p->data_);
-        p = p->pNext_;
-    }
-    p = tempstack.pHead_;
-    while (p != NULL)
-    {
-        push(p->data_);
-        p = p->pNext_;
-    }
+    //Node* p = s.pHead_;
+    //while (p != NULL)
+    //{
+    //    push(p->data_);
+    //    p = p->pNext_;
+    //}
 }
 
 void StackL::pop()
 {
-    if (0 == isEmpty())
+    if (!isEmpty())
     {
         Node* pdeleted(pHead_);
         pHead_ = pdeleted->pNext_;
@@ -61,7 +42,7 @@ void StackL::push(const int& v)
 
 int& StackL::top()
 {
-    if(0 == isEmpty())
+    if(!isEmpty())
     {
         return pHead_->data_;
     }
@@ -70,7 +51,7 @@ int& StackL::top()
 
 const int& StackL::top() const
 {
-    if (0 == isEmpty())
+    if (!isEmpty())
     {
         return pHead_->data_;
     }
