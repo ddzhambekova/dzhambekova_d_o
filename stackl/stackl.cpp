@@ -7,18 +7,55 @@ bool StackL::isEmpty() const
 
 StackL StackL::operator=(const StackL& s)
 {
-
+    Node* pCopyTo = pHead_;
+    Node* pCopyFrom = s.pHead_;
+    while ((pCopyTo->pNext_ != nullptr) && (pCopyFrom->pNext_ != nullptr))
+    {
+        pCopyTo->data_ = pCopyFrom->data_;
+        pCopyTo = pCopyTo->pNext_;
+        pCopyFrom = pCopyFrom->pNext_;
+    }
+    if ((pCopyTo->pNext_ == nullptr) && (pCopyFrom->pNext_ != nullptr))
+    {
+        pCopyTo->data_ = pCopyFrom->data_;
+        pCopyFrom = pCopyFrom->pNext_;
+        while (pCopyFrom != nullptr)
+        {
+            pCopyTo->pNext_ = new Node(nullptr, pCopyFrom->data_);
+            pCopyTo = pCopyTo->pNext_;
+            pCopyFrom = pCopyFrom->pNext_;
+        }
+    }
+    else
+    {
+        if ((pCopyFrom->pNext_ == nullptr) && (pCopyTo->pNext_ != nullptr))
+        {
+            pCopyTo->data_ = pCopyFrom->data_;
+            Node* pContinue(pCopyTo->pNext_);
+            pCopyTo->pNext_ = nullptr;
+            Node* pDelete;
+            while (pContinue != nullptr)
+            {
+                pDelete = pContinue;
+                pContinue = pDelete->pNext_;
+                delete pDelete;
+            }
+        }
+    }
     return *this;
 }
 
 StackL::StackL(const StackL& s)
 {
-    //Node* p = s.pHead_;
-    //while (p != NULL)
-    //{
-    //    push(p->data_);
-    //    p = p->pNext_;
-    //}
+    Node* pCopyFrom(s.pHead_->pNext_);
+    Node* pCopyTo = new Node(nullptr, s.pHead_->data_);
+    pHead_ = pCopyTo;
+    while (pCopyFrom != nullptr)
+    {
+        pCopyTo->pNext_ = new Node(nullptr, pCopyFrom->data_);
+        pCopyTo = pCopyTo->pNext_;
+        pCopyFrom = pCopyFrom->pNext_;
+    }
 }
 
 void StackL::pop()

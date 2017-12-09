@@ -5,11 +5,29 @@ bool PriorityQueueL::isEmpty() const
     return (pHead_ == nullptr);
 }
 
+PriorityQueueL::PriorityQueueL(const PriorityQueueL& pq)
+{
+    /*Head_ = pq.pHead_;
+    Node *p = pHead_;
+    Node *p1 = pHead_;
+    while (p->pNext_ != nullptr)
+    {
+        p = p->pNext_;
+    }
+    Node *pnext = p->pNext_;
+    pTail_ = pq.pTail_;*/
+    Node *p;
+    while (p)
+    {
+        push(p->data_);
+        p = p->pNext_;
+    }
+}
+
 void PriorityQueueL::pop()
 {
     if (!isEmpty())
     {
-
         Node* pdeleted(pHead_);
         pHead_ = pdeleted->pNext_;
         delete pdeleted;
@@ -39,6 +57,10 @@ void PriorityQueueL::push(const double& v)
             }
             Node *pnext = p->pNext_;
             p->pNext_ = new Node(pnext, v);
+            if (pTail_->data_ - v <= ss)
+            {
+                pTail_ = new Node(pnext, v);
+            }
         }
     }
     else
@@ -75,11 +97,6 @@ double& PriorityQueueL::back()
 PriorityQueueL PriorityQueueL::operator=(const PriorityQueueL& p)
 {
     return *this;
-}
-
-PriorityQueueL::PriorityQueueL(const PriorityQueueL& p)
-{
-
 }
 
 std::ostream& PriorityQueueL::writeTo(std::ostream& ostrm) const

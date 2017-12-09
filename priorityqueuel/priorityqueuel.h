@@ -15,7 +15,7 @@ public:
         }
     }
     PriorityQueueL operator=(const PriorityQueueL& p);
-    PriorityQueueL(const PriorityQueueL& p);
+    PriorityQueueL(const PriorityQueueL& pq);
     bool isEmpty() const;
     void push(const double& v);
     void pop();

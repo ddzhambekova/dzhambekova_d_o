@@ -15,8 +15,8 @@ int main()
     w.pop();
     cout << "w.pop(): " << w << endl;
     cout << "w.top(): " << w.top() << endl;
-    //StackL r = s;
-    //cout << "r = s: " << r << endl;
+    StackL r = s;
+    cout << "r = s: " << r << endl;
     StackL er;
     try
     {
