@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3B4692ED-7ABC-43D9-AF6C-D55D96A8B983}</ProjectGuid>
+    <ProjectGuid>{B467A23A-4696-45DF-AAA5-36112DEFA0F4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>stackar</RootNamespace>
+    <RootNamespace>priorityqueuear</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +88,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../array</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,11 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="stackar.cpp" />
-    <ClCompile Include="stackar_test.cpp" />
+    <ClCompile Include="priorityqueuear.cpp" />
+    <ClCompile Include="priorityqueuear_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stackar.h" />
+    <ClInclude Include="priorityqueuear.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

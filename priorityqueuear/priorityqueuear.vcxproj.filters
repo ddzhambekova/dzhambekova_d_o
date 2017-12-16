@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stackar.cpp">
+    <ClCompile Include="priorityqueuear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="stackar_test.cpp">
+    <ClCompile Include="priorityqueuear_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stackar.h">
+    <ClInclude Include="priorityqueuear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

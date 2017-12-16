@@ -1,7 +1,6 @@
 #ifndef STACKAR_H_20171205
 #define STACKAR_H_20171205
 
-#include "array.h"
 #include<iostream>
 
 class StackAr

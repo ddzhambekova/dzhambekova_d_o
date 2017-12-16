@@ -14,13 +14,14 @@ public:
             pop();
         }
     }
-    PriorityQueueL operator=(const PriorityQueueL& p);
+    PriorityQueueL& operator=(const PriorityQueueL& p);
     PriorityQueueL(const PriorityQueueL& pq);
     bool isEmpty() const;
     void push(const double& v);
     void pop();
     double& front();
     double& back();
+    void copy(const PriorityQueueL& pq);
 
     std::ostream& writeTo(std::ostream& ostrm) const;
 

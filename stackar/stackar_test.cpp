@@ -10,44 +10,44 @@ int main()
     s.push(11);
     s.push(1);
     s.push(7);
-    cout << "Stack s:" << endl;
-    cout << s << endl;
+    cout << "Stack s: \n" << s << endl;
     s.pop();
-    cout << "s.pop():" << endl;
-    cout << s << endl;
+    cout << "s.pop(): \n" << s << endl;
     StackAr s1(s);
-    cout << "s1(s): " << endl;
-    cout << s1 << endl;
+    cout << "s1(s): \n" << s1 << endl;;
     s1.top() = 16;
-    cout << "s1.top() = 16: " << endl;
-    cout << s1 << endl;
+    cout << "s1.top() = 16: \n" << s1 << endl;
 
     StackAr s2;
     StackAr w(s2);
-    cout << "Copy from empty: " << endl;
-    cout << s2 << endl;
+    cout << "Copy from empty: \n" << s2 << endl;
 
     StackAr s3;
     s3.push(2);
     s3.push(7);
     s3.push(3);
     s3.push(1);
-    cout << "Stack s3:" << endl;
-    cout << s3 << endl;
+    cout << "Stack s3: \n" << s3 << endl;
     s2 = s3;
-    cout << "s2 = s3:" << endl;
-    cout << s2 << endl;
+    cout << "s2 = s3: \n" << s2 << endl;
+
     StackAr s4;
     s4.push(3);
     s4.push(7);
-    cout << "Stack s4:" << endl << s4 << endl;
+    cout << "Stack s4: \n" << s4 << endl;
     s3 = s4;
-    cout << "s3 = s4:" << endl << s3 << endl;
+    cout << "s3 = s4: \n" << s3 << endl;
 
     StackAr s5;
+    s5.push(2);
+    s5.push(5);
+    s5 = s;
+    cout << "s5 = s: \n" << s5 << endl;
+
+    StackAr s6;
     try
     {
-        s5.top();
+        s6.top();
     }
     catch (int er)
     {
@@ -55,7 +55,7 @@ int main()
     }
     try
     {
-        s5.pop();
+        s6.pop();
     }
     catch (int er)
     {

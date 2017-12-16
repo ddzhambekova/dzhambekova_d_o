@@ -24,6 +24,15 @@ int main()
     cout << "Print back: " << a.back() << endl;
     a.pop();
     cout << "Pop: " << a << endl;
+    PriorityQueueL q1;
+    q1.push(4);
+    q1.push(2);
+    q1 = a;
+    cout << "q1 = a: " << q1 << endl;
+
+    PriorityQueueL q2(a);
+    cout << "q2(a): "<< q2 << endl;
+
     PriorityQueueL b;
     try
     {
@@ -49,10 +58,6 @@ int main()
     {
         cout << "Error " << er << ": back doesn't exist, queue is empty!" << endl;
     }
-    //PriorityQueueL c(a);
-    //cout << c.front() << endl;
-    //cout << c.back() << endl;
-    //cout << c << endl;
 
     return 0;
 }

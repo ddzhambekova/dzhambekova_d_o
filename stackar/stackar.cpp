@@ -33,11 +33,11 @@ void StackAr::push(const int& q)
 {
     if (isEmpty())
     {
-        pData_ = new int[size] {int()};
+        pData_ = new int[size];
     }
     if (nHead_ == (size - 1))
     {
-        int* newData = new int[size+1]{ int() };
+        int* newData = new int[size+1];
         for (int i(0); i <= nHead_; i++)
         {
             newData[i] = pData_[i];
@@ -118,14 +118,14 @@ std::ostream& StackAr::writeTo(std::ostream& ostrm) const
 {
     if (!isEmpty())
     {
-        for (int i(nHead_); i >= 0; i--)
+        for (int i = nHead_; i >= 0; i--)
         {
             ostrm << pData_[i] << std::endl;
         }
     }
     else
     {
-        ostrm << "Stack is Empty";
+        ostrm << "Stack is empty";
     }
     return ostrm;
 }
