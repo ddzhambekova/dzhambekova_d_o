@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ToolsWindow</class>
+ <widget class="QDialog" name="ToolsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cookies: Tools</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../images/resource.qrc">
+    <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
+  </property>
+  <widget class="QPushButton" name="backToFWButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>230</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Вернуться в главное меню</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../images/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

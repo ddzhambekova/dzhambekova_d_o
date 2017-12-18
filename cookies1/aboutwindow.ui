@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutWindow</class>
+ <widget class="QDialog" name="AboutWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cookies: About</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../images/resource.qrc">
+    <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
+  </property>
+  <widget class="QPushButton" name="backToFWButton">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>260</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Вернуться в главное меню</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../images/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
