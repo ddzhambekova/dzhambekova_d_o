@@ -84,7 +84,7 @@
    <iconset resource="../../images/resource.qrc">
     <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -219,7 +219,7 @@
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QPushButton" name="startButton">
@@ -231,7 +231,7 @@
         <item>
          <widget class="QPushButton" name="toolsButton">
           <property name="text">
-           <string>Настройки</string>
+           <string>Правила игры</string>
           </property>
          </widget>
         </item>
@@ -257,6 +257,8 @@
   </widget>
  </widget>
  <resources>
+  <include location="../../images/resource.qrc"/>
+  <include location="../../images/resource.qrc"/>
   <include location="../../images/resource.qrc"/>
  </resources>
  <connections/>

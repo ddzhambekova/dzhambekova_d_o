@@ -17,6 +17,7 @@ public:
 
 signals:
     void chooseLevelWindow();
+    void level();
 
 private slots:
     void on_backToChooseButton_clicked();

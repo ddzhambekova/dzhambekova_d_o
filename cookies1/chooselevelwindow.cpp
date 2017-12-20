@@ -7,10 +7,16 @@ chooseLevelWindow::chooseLevelWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setFixedSize(345,385);
-    lev1 = new Level1(this);
-    connect(lev1, &Level1::chooseLevelWindow, this, &chooseLevelWindow::show);
+
+    lev = new Level(this);
+    connect(lev, &Level::chooseLevelWindow, this, &chooseLevelWindow::show);
+    lev2 = new Level2(this);
+    connect(lev2, &Level2::chooseLevelWindow, this, &chooseLevelWindow::show);
+
     lose = new youlosewindow(this);
     connect(lose, &youlosewindow::chooseLevelWindow, this, &chooseLevelWindow::show);
+    win = new youWinWindow(this);
+    connect(win, youWinWindow::chooseLW, this, chooseLevelWindow::show);
 
 }
 
@@ -28,5 +34,18 @@ void chooseLevelWindow::on_backToFWButton_clicked()
 void chooseLevelWindow::on_l1Button_clicked()
 {
     this->close();
-    lev1->show();
+    lev->show();
+}
+
+void chooseLevelWindow::on_l2Button_clicked()
+{
+    this->close();
+    lev2->show();
+}
+
+void chooseLevelWindow::on_l3Button_clicked()
+{
+    this->close();
+    win->show();
+    win->draw(3);
 }

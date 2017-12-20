@@ -6,6 +6,7 @@ youlosewindow::youlosewindow(QWidget *parent) :
     ui(new Ui::youlosewindow)
 {
     ui->setupUi(this);
+
 }
 
 youlosewindow::~youlosewindow()

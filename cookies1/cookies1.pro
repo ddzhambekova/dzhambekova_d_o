@@ -29,33 +29,40 @@ SOURCES += \
     toolswindow.cpp \
     aboutwindow.cpp \
     chooselevelwindow.cpp \
-    level1.cpp \
     cookie.cpp \
     rikki.cpp \
     blackcell.cpp \
     youlosewindow.cpp \
-    q.cpp
+    celldraw.cpp \
+    level.cpp \
+    rik.cpp \
+    youwinwindow.cpp \
+    level2.cpp
 
 HEADERS += \
     firstwindow.h \
     toolswindow.h \
     aboutwindow.h \
     chooselevelwindow.h \
-    level1.h \
     cookie.h \
     rikki.h \
     blackcell.h \
     youlosewindow.h \
-    q.h
+    celldraw.h \
+    level.h \
+    rik.h \
+    youwinwindow.h \
+    level2.h
 
 FORMS += \
     firstwindow.ui \
     toolswindow.ui \
     aboutwindow.ui \
     chooselevelwindow.ui \
-    level1.ui \
     youlosewindow.ui \
-    q.ui
+    level.ui \
+    youwinwindow.ui \
+    level2.ui
 
 RESOURCES += \
     ../../images/resource.qrc

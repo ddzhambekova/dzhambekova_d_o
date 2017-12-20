@@ -1,8 +1,8 @@
 #ifndef CHOOSELEVELWINDOW_H
 #define CHOOSELEVELWINDOW_H
 
-#include "level1.h"
-#include "youlosewindow.h"
+#include "level.h"
+#include "level2.h"
 
 #include <QDialog>
 
@@ -26,10 +26,16 @@ private slots:
 
     void on_l1Button_clicked();
 
+    void on_l2Button_clicked();
+
+    void on_l3Button_clicked();
+
 private:
     Ui::chooseLevelWindow *ui;
-    Level1 *lev1;
     youlosewindow *lose;
+    youWinWindow *win;
+    Level *lev;
+    Level2 *lev2;
 };
 
 #endif // CHOOSELEVELWINDOW_H
