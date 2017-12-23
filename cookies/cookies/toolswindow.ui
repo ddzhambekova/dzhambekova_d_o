@@ -78,8 +78,8 @@
    <string>Cookies: Rules</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../images/resource.qrc">
-    <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
+   <iconset resource="recources.qrc">
+    <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
   </property>
   <widget class="QPushButton" name="backToFWButton">
    <property name="geometry">
@@ -117,9 +117,7 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <resources>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
+  <include location="recources.qrc"/>
  </resources>
  <connections/>
 </ui>

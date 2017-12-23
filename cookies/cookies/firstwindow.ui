@@ -81,8 +81,8 @@
    <string>Cookies</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
+   <iconset resource="recources.qrc">
+    <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">

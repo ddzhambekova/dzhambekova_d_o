@@ -77,6 +77,10 @@
   <property name="windowTitle">
    <string>Win!</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recources.qrc">
+    <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
+  </property>
   <widget class="QPushButton" name="toChooseButton">
    <property name="geometry">
     <rect>

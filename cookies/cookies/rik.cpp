@@ -7,7 +7,7 @@ Rik::Rik()
 
 void Rik::setPic()
 {
-    this->setPixmap(QPixmap(":/images/zverek.png"));
+    this->setPixmap(QPixmap(":/images/images/zverek.png"));
 
 }
 

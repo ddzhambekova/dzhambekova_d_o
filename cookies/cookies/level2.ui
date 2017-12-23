@@ -77,6 +77,10 @@
   <property name="windowTitle">
    <string>Cookies: Level 2</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recources.qrc">
+    <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget_3">
     <property name="geometry">
@@ -149,9 +153,9 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>360</x>
       <y>290</y>
-      <width>161</width>
+      <width>177</width>
       <height>134</height>
      </rect>
     </property>
@@ -165,8 +169,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../images/resource.qrc">
-         <normaloff>:/img/downarrow.png</normaloff>:/img/downarrow.png</iconset>
+        <iconset resource="recources.qrc">
+         <normaloff>:/images/images/downarrow.png</normaloff>:/images/images/downarrow.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -182,8 +186,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../images/resource.qrc">
-         <normaloff>:/uparrow.png</normaloff>:/uparrow.png</iconset>
+        <iconset resource="recources.qrc">
+         <normaloff>:/images/images/uparrow.png</normaloff>:/images/images/uparrow.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -199,8 +203,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../images/resource.qrc">
-         <normaloff>:/leftarrow.png</normaloff>:/leftarrow.png</iconset>
+        <iconset resource="recources.qrc">
+         <normaloff>:/images/images/leftarrow.png</normaloff>:/images/images/leftarrow.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -216,8 +220,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../images/resource.qrc">
-         <normaloff>:/rightarrow.png</normaloff>:/rightarrow.png</iconset>
+        <iconset resource="recources.qrc">
+         <normaloff>:/images/images/rightarrow.png</normaloff>:/images/images/rightarrow.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -258,9 +262,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
+  <include location="recources.qrc"/>
  </resources>
  <connections/>
 </ui>

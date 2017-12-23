@@ -77,6 +77,10 @@
   <property name="windowTitle">
    <string>Game Over</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recources.qrc">
+    <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
+  </property>
   <widget class="QPushButton" name="restartButton">
    <property name="geometry">
     <rect>
@@ -117,6 +121,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="recources.qrc"/>
+ </resources>
  <connections/>
 </ui>
