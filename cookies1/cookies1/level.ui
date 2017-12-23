@@ -83,7 +83,7 @@
      <rect>
       <x>340</x>
       <y>260</y>
-      <width>151</width>
+      <width>177</width>
       <height>134</height>
      </rect>
     </property>
@@ -253,6 +253,19 @@
       <number>0</number>
      </property>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="startButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>200</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Запуск</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

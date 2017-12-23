@@ -29,9 +29,6 @@ SOURCES += \
     toolswindow.cpp \
     aboutwindow.cpp \
     chooselevelwindow.cpp \
-    cookie.cpp \
-    rikki.cpp \
-    blackcell.cpp \
     youlosewindow.cpp \
     celldraw.cpp \
     level.cpp \
@@ -44,9 +41,6 @@ HEADERS += \
     toolswindow.h \
     aboutwindow.h \
     chooselevelwindow.h \
-    cookie.h \
-    rikki.h \
-    blackcell.h \
     youlosewindow.h \
     celldraw.h \
     level.h \

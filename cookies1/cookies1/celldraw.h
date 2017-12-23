@@ -3,6 +3,7 @@
 
 #include <QLabel>
 #include <QGraphicsItem>
+#include <QCoreApplication>
 
 enum Cell
 {

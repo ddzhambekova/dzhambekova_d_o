@@ -29,6 +29,7 @@ Level::Level(QWidget *parent) :
     ui->stepsNumber->display(stepsCount);
     ui->cookiesNumber->display(cookieCount);
 
+
     celldraw *lbl1 = new celldraw();
     lbl1->setPic(CL_COOKIE);
 

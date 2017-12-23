@@ -30,7 +30,18 @@ signals:
     void loseWindow();
     void stm();
 
+    void signalUp();
+    void signalDown();
+    void signalLeft();
+    void signalRight();
+
 private slots:
+//    void up();
+//    void down();
+//    void left();
+//    void right();
+//    void jump();
+
     void on_upArrow_clicked();
 
     void on_downArrow_clicked();
@@ -43,6 +54,8 @@ private slots:
 
     void on_backToChoose_clicked();
 
+    //void on_startButton_clicked();
+
 private:
     Ui::Level *ui;
     youlosewindow *lose;
@@ -51,6 +64,8 @@ private:
     int stepsCount = 5;
     int cookieCount = 0;
     int cellwidth = 79;
+//    QList<QPropertyAnimation> *pr;
+//    QPropertyAnimation *animUp;
 };
 
 #endif // LEVEL_H

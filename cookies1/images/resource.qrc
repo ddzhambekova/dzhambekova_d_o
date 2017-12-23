@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>cookie.png</file>
+        <file>write.png</file>
+        <file>write1.png</file>
+        <file>cookie1.png</file>
+        <file>downarrow.png</file>
+        <file>bomb_PNG26.png</file>
+        <file>cookie79.png</file>
+        <file>black.png</file>
+        <file>leftarrow.png</file>
+        <file>pelite_black_small.JPG</file>
+        <file>resource.qrc</file>
+        <file>rightarrow.png</file>
+        <file>uparrow.png</file>
+        <file>zverek.png</file>
+        <file>star80.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>leftarrow.png</file>
+        <file>rightarrow.png</file>
+        <file>uparrow.png</file>
+    </qresource>
+</RCC>

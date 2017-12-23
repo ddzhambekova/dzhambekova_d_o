@@ -10,15 +10,15 @@ void celldraw::setPic(Cell cell)
     switch(cell)
     {
     case CL_COOKIE:
-        this->setPixmap(QPixmap("Z:/qt/qtprojects/images/cookie79.png"));
+        this->setPixmap(QPixmap(":/img/cookie79.png"));
         setZValue(-1);
         break;
     case CL_BLACK:
-        this->setPixmap(QPixmap("Z:/qt/qtprojects/images/black.png"));
+        this->setPixmap(QPixmap(":/img/black.png"));
         setZValue(-1);
         break;
     case CL_BOMB:
-        this->setPixmap(QPixmap("Z:/qt/qtprojects/images/bomb_PNG26.png"));
+        this->setPixmap(QPixmap(":/img/bomb_PNG26.png"));
         setZValue(-1);
     case CL_CLEAR:
         break;
