@@ -36,11 +36,11 @@ signals:
     void signalRight();
 
 private slots:
-//    void up();
-//    void down();
-//    void left();
-//    void right();
-//    void jump();
+    void up();
+    void down();
+    void left();
+    void right();
+    void jump();
 
     void on_upArrow_clicked();
 
@@ -54,7 +54,7 @@ private slots:
 
     void on_backToChoose_clicked();
 
-    //void on_startButton_clicked();
+    void on_startButton_clicked();
 
 private:
     Ui::Level *ui;
@@ -64,8 +64,8 @@ private:
     int stepsCount = 5;
     int cookieCount = 0;
     int cellwidth = 79;
-//    QList<QPropertyAnimation> *pr;
-//    QPropertyAnimation *animUp;
+    QList<QPropertyAnimation> *pr;
+    QPropertyAnimation *animUp;
 };
 
 #endif // LEVEL_H

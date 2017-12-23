@@ -7,6 +7,5 @@ int main(int argc, char *argv[])
     FirstWindow w;
     w.show();
 
-
     return a.exec();
 }

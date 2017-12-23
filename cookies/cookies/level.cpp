@@ -78,6 +78,15 @@ Level::Level(QWidget *parent) :
 //    machine.setInitialState(st1);
 //    machine.start();
 
+    pr = new QList<QPropertyAnimation>;
+
+    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
+
+
+    animUp = new QPropertyAnimation(rikki, "geometry");
+    animUp->setDuration(1000);
+    animUp->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
+    animUp->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
 
 
 }
@@ -87,7 +96,7 @@ Level::~Level()
     delete ui;
 }
 
-void Level::on_upArrow_clicked()
+void Level::up()
 {
     if(stepsCount <= 0)
     {
@@ -104,10 +113,9 @@ void Level::on_upArrow_clicked()
     animation->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
 
     animation->start();
-
 }
 
-void Level::on_downArrow_clicked()
+void Level::down()
 {
     if(stepsCount <= 0)
     {
@@ -126,7 +134,7 @@ void Level::on_downArrow_clicked()
     animation->start();
 }
 
-void Level::on_leftArrow_clicked()
+void Level::left()
 {
     if(stepsCount <= 0)
     {
@@ -145,7 +153,7 @@ void Level::on_leftArrow_clicked()
     animation->start();
 }
 
-void Level::on_rightArrow_clicked()
+void Level::right()
 {
     if(stepsCount <= 0)
     {
@@ -164,7 +172,7 @@ void Level::on_rightArrow_clicked()
     animation->start();
 }
 
-void Level::on_jumpButton_clicked()
+void Level::jump()
 {
     if(stepsCount <= 0)
     {
@@ -183,8 +191,41 @@ void Level::on_jumpButton_clicked()
     animation->start();
 }
 
+void Level::on_upArrow_clicked()
+{
+    pr->append(animUp);
+}
+
+void Level::on_downArrow_clicked()
+{
+
+}
+
+void Level::on_leftArrow_clicked()
+{
+
+}
+
+void Level::on_rightArrow_clicked()
+{
+
+}
+
+void Level::on_jumpButton_clicked()
+{
+
+}
+
 void Level::on_backToChoose_clicked()
 {
     this->close();
     emit chooseLevelWindow();
+}
+
+void Level::on_startButton_clicked()
+{
+//    foreach (const QPropertyAnimation *anim, pr)
+//    {
+//        anim->start();
+//    }
 }

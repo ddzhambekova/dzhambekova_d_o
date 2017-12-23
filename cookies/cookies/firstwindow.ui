@@ -81,16 +81,16 @@
    <string>Cookies</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../images/resource.qrc">
+   <iconset>
     <normaloff>:/img/cookie1.png</normaloff>:/img/cookie1.png</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>0</y>
      <width>331</width>
-     <height>361</height>
+     <height>381</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -102,7 +102,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../images/resource.qrc">:/img/write.png</pixmap>
+         <pixmap resource="recources.qrc">:/images/images/write.png</pixmap>
         </property>
        </widget>
       </item>
@@ -127,7 +127,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../../images/resource.qrc">:/img/write1.png</pixmap>
+           <pixmap resource="recources.qrc">:/images/images/write1.png</pixmap>
           </property>
          </widget>
         </item>
@@ -182,7 +182,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../images/resource.qrc">:/img/cookie1.png</pixmap>
+         <pixmap resource="recources.qrc">:/images/images/cookie1.png</pixmap>
         </property>
        </widget>
       </item>
@@ -256,10 +256,9 @@
    </layout>
   </widget>
  </widget>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
-  <include location="../../images/resource.qrc"/>
+  <include location="recources.qrc"/>
  </resources>
  <connections/>
 </ui>

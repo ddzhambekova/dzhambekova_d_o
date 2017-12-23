@@ -59,4 +59,9 @@ FORMS += \
     level2.ui
 
 RESOURCES += \
+    ../../images/resource.qrc \
+    ../images/imgs.qrc \
+    rsrc.qrc \
+    resource.qrc \
+    resource.qrc \
     ../../images/resource.qrc
