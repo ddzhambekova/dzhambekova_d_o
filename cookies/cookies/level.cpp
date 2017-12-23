@@ -29,7 +29,6 @@ Level::Level(QWidget *parent) :
     ui->stepsNumber->display(stepsCount);
     ui->cookiesNumber->display(cookieCount);
 
-
     celldraw *lbl1 = new celldraw();
     lbl1->setPic(CL_COOKIE);
 
@@ -78,15 +77,6 @@ Level::Level(QWidget *parent) :
 //    machine.setInitialState(st1);
 //    machine.start();
 
-    pr = new QList<QPropertyAnimation>;
-
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-
-
-    animUp = new QPropertyAnimation(rikki, "geometry");
-    animUp->setDuration(1000);
-    animUp->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animUp->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
 
 
 }
@@ -96,7 +86,7 @@ Level::~Level()
     delete ui;
 }
 
-void Level::up()
+void Level::on_upArrow_clicked()
 {
     if(stepsCount <= 0)
     {
@@ -113,9 +103,10 @@ void Level::up()
     animation->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
 
     animation->start();
+
 }
 
-void Level::down()
+void Level::on_downArrow_clicked()
 {
     if(stepsCount <= 0)
     {
@@ -134,7 +125,7 @@ void Level::down()
     animation->start();
 }
 
-void Level::left()
+void Level::on_leftArrow_clicked()
 {
     if(stepsCount <= 0)
     {
@@ -153,7 +144,7 @@ void Level::left()
     animation->start();
 }
 
-void Level::right()
+void Level::on_rightArrow_clicked()
 {
     if(stepsCount <= 0)
     {
@@ -172,7 +163,7 @@ void Level::right()
     animation->start();
 }
 
-void Level::jump()
+void Level::on_jumpButton_clicked()
 {
     if(stepsCount <= 0)
     {
@@ -191,41 +182,8 @@ void Level::jump()
     animation->start();
 }
 
-void Level::on_upArrow_clicked()
-{
-    pr->append(animUp);
-}
-
-void Level::on_downArrow_clicked()
-{
-
-}
-
-void Level::on_leftArrow_clicked()
-{
-
-}
-
-void Level::on_rightArrow_clicked()
-{
-
-}
-
-void Level::on_jumpButton_clicked()
-{
-
-}
-
 void Level::on_backToChoose_clicked()
 {
     this->close();
     emit chooseLevelWindow();
-}
-
-void Level::on_startButton_clicked()
-{
-//    foreach (const QPropertyAnimation *anim, pr)
-//    {
-//        anim->start();
-//    }
 }

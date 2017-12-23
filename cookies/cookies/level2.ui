@@ -146,6 +146,96 @@
      </rect>
     </property>
    </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>290</y>
+      <width>161</width>
+      <height>134</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="downArrow_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../images/resource.qrc">
+         <normaloff>:/img/downarrow.png</normaloff>:/img/downarrow.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="upArrow_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../images/resource.qrc">
+         <normaloff>:/uparrow.png</normaloff>:/uparrow.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="leftArrow_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../images/resource.qrc">
+         <normaloff>:/leftarrow.png</normaloff>:/leftarrow.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="rightArrow_2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../images/resource.qrc">
+         <normaloff>:/rightarrow.png</normaloff>:/rightarrow.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" rowspan="2">
+      <widget class="QPushButton" name="jumpButton_2">
+       <property name="text">
+        <string>JUMP</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
@@ -164,101 +254,13 @@
      </property>
     </layout>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>300</y>
-      <width>177</width>
-      <height>134</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="downArrow">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="recources.qrc">
-         <normaloff>:/images/images/downarrow.png</normaloff>:/images/images/downarrow.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="upArrow">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="recources.qrc">
-         <normaloff>:/images/images/uparrow.png</normaloff>:/images/images/uparrow.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="leftArrow">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="recources.qrc">
-         <normaloff>:/images/images/leftarrow.png</normaloff>:/images/images/leftarrow.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="rightArrow">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="recources.qrc">
-         <normaloff>:/images/images/rightarrow.png</normaloff>:/images/images/rightarrow.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" rowspan="2">
-      <widget class="QPushButton" name="jumpButton">
-       <property name="text">
-        <string>JUMP</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="recources.qrc"/>
+  <include location="../../images/resource.qrc"/>
+  <include location="../../images/resource.qrc"/>
+  <include location="../../images/resource.qrc"/>
  </resources>
  <connections/>
 </ui>
