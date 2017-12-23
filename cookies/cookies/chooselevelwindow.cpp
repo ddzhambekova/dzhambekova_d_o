@@ -16,7 +16,7 @@ chooseLevelWindow::chooseLevelWindow(QWidget *parent) :
     lose = new youlosewindow(this);
     connect(lose, &youlosewindow::chooseLevelWindow, this, &chooseLevelWindow::show);
     win = new youWinWindow(this);
-    connect(win, youWinWindow::chooseLW, this, chooseLevelWindow::show);
+    connect(win, &youWinWindow::chooseLW, this, &chooseLevelWindow::show);
 
 }
 
