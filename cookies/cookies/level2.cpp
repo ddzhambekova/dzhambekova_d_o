@@ -85,6 +85,8 @@ Level2::Level2(QWidget *parent) :
     ui->fieldLayout_2->addWidget(lbl14, 3, 1);
     ui->fieldLayout_2->addWidget(lbl15, 3, 2);
 
+    moveList = new QList<Move>;
+
 }
 
 Level2::~Level2()
@@ -94,98 +96,27 @@ Level2::~Level2()
 
 void Level2::on_upArrow_2_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-
-    ui->stepsNumber_2->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
-
-    animation->start();
-
+    moveList->append(M_UP);
 }
 
 void Level2::on_downArrow_2_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber_2->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 + cellwidth), QPointF(x2, y2 + cellwidth)));
-
-    animation->start();
+    moveList->append(M_DOWN);
 }
 
 void Level2::on_leftArrow_2_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber_2->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1 - cellwidth, y1), QPointF(x2 - cellwidth, y2)));
-
-    animation->start();
+    moveList->append(M_LEFT);
 }
 
 void Level2::on_rightArrow_2_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber_2->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1 + cellwidth, y1), QPointF(x2 + cellwidth, y2)));
-
-    animation->start();
+    moveList->append(M_RIGHT);
 }
 
 void Level2::on_jumpButton_2_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber_2->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1500);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 - 2 * cellwidth), QPointF(x2, y2 - 2 * cellwidth)));
-
-    animation->start();
+    moveList->append(M_JUMP);
 }
 
 void Level2::on_backToChoose_clicked()
@@ -194,3 +125,17 @@ void Level2::on_backToChoose_clicked()
     emit chooseLevelWindow();
 }
 
+void Level2::on_startMoveButton_clicked()
+{
+    for(int i = 0; i < moveList->length(); i+=1)
+    {
+        rikki->moveRikki(moveList->at(i));
+        stepsCount -= 1;
+        ui->stepsNumber_2->display(stepsCount);
+        if(stepsCount < 0)
+        {
+            this->close();
+            lose->show();
+        }
+    }
+}
