@@ -43,6 +43,8 @@ private slots:
 
     void on_backToChoose_clicked();
 
+    void on_startMoveButton_clicked();
+
 private:
     Ui::Level *ui;
     youlosewindow *lose;
@@ -51,6 +53,8 @@ private:
     int stepsCount = 5;
     int cookieCount = 0;
     int cellwidth = 79;
+    QList<Move> *moveList;
+    //QList<QPropertyAnimation> *list;
 };
 
 #endif // LEVEL_H

@@ -17,5 +17,5 @@ youlosewindow::~youlosewindow()
 void youlosewindow::on_backToChooseButton_clicked()
 {
     this->close();
-    emit chooseLevelWindow();
+    emit youlosewindow::chooseLevelWindow();
 }

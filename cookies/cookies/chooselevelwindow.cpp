@@ -49,3 +49,9 @@ void chooseLevelWindow::on_l3Button_clicked()
     win->show();
     win->draw(3);
 }
+
+void chooseLevelWindow::on_l4Button_clicked()
+{
+    this->close();
+    lose->show();
+}

@@ -2,6 +2,7 @@
 #include "ui_level.h"
 
 #include<QGraphicsView>
+#include<QDebug>
 
 Level::Level(QWidget *parent) :
     QMainWindow(parent),
@@ -12,13 +13,6 @@ Level::Level(QWidget *parent) :
 
     lose = new youlosewindow(this);
 
-
-
-//    QList<QString> list;
-//    QLabel *lbl1 = new QLabel(this);
-//    QString *r = new QString("rr");
-//    list << r;
-    //list[0] = new QLabel();
 
     rikki = new Rik();
     rikki->setPic();
@@ -64,19 +58,7 @@ Level::Level(QWidget *parent) :
     ui->fieldLayout->addWidget(lbl7, 2, 0);
     ui->fieldLayout->addWidget(lbl8, 2, 1);
 
-//    QStateMachine machine;
-//    QState *st1 = new QState();
-//    st1->assignProperty(rikki, "coord", QRectF(168, 278, 79, 79));
-//    QState *st2 = new QState();
-//    st2->assignProperty(rikki, "coord", QRectF(89, 199, 79, 79));
-//    QFinalState *st3 = new QFinalState();
-//    st1->addTransition(rikki, SIGNAL(stm()), st2);
-//    st2->addTransition(rikki, );
-//    machine.addState(st1);
-//    machine.addState(st2);
-//    machine.setInitialState(st1);
-//    machine.start();
-
+    moveList = new QList<Move>;
 
 
 }
@@ -88,102 +70,46 @@ Level::~Level()
 
 void Level::on_upArrow_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-
-    ui->stepsNumber->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 - cellwidth), QPointF(x2, y2 - cellwidth)));
-
-    animation->start();
-
+    moveList->append(M_UP);
 }
 
 void Level::on_downArrow_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 + cellwidth), QPointF(x2, y2 + cellwidth)));
-
-    animation->start();
+    moveList->append(M_DOWN);
 }
 
 void Level::on_leftArrow_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1 - cellwidth, y1), QPointF(x2 - cellwidth, y2)));
-
-    animation->start();
+    moveList->append(M_LEFT);
 }
 
 void Level::on_rightArrow_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1000);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1 + cellwidth, y1), QPointF(x2 + cellwidth, y2)));
-
-    animation->start();
+    moveList->append(M_RIGHT);
 }
 
 void Level::on_jumpButton_clicked()
 {
-    if(stepsCount <= 0)
-    {
-        this->close();
-        lose->show();
-    }
-    ui->stepsNumber->display(stepsCount-=1);
-
-    QPropertyAnimation *animation = new QPropertyAnimation(rikki, "geometry");
-    animation->setDuration(1500);
-    int x1(rikki->QWidget::x()), y1(rikki->QWidget::y()), x2(rikki->QWidget::x() + cellwidth), y2(rikki->QWidget::y() + cellwidth);
-    rikki->setZValue(1);
-    animation->setStartValue(QRectF(QPointF(x1, y1), QPointF(x2, y2)));
-    animation->setEndValue(QRectF(QPointF(x1, y1 - 2 * cellwidth), QPointF(x2, y2 - 2 * cellwidth)));
-
-    animation->start();
+    moveList->append(M_JUMP);
 }
 
 void Level::on_backToChoose_clicked()
 {
     this->close();
     emit chooseLevelWindow();
+}
+
+void Level::on_startMoveButton_clicked()
+{
+    for(int i = 0; i < moveList->length(); i+=1)
+    {
+        rikki->moveRikki(moveList->at(i));
+        stepsCount -= 1;
+        ui->stepsNumber->display(stepsCount);
+        if(stepsCount < 0)
+        {
+            this->close();
+            lose->show();
+        }
+    }
 }

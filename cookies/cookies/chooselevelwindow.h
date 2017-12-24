@@ -30,6 +30,8 @@ private slots:
 
     void on_l3Button_clicked();
 
+    void on_l4Button_clicked();
+
 private:
     Ui::chooseLevelWindow *ui;
     youlosewindow *lose;

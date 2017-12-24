@@ -81,19 +81,6 @@
    <iconset resource="recources.qrc">
     <normaloff>:/images/images/cookie1.png</normaloff>:/images/images/cookie1.png</iconset>
   </property>
-  <widget class="QPushButton" name="restartButton">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>280</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Начать заново</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="backToChooseButton">
    <property name="geometry">
     <rect>
