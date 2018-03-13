@@ -1,6 +1,0 @@
-#include "celldraw.h"
-
-cookiedraw::cookiedraw()
-{
-
-}

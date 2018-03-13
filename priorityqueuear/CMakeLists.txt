@@ -1,3 +1,0 @@
-project(dzhambekova_d_o)
-
-add_executable(priorityqueuear priorityqueuear.cpp priorityqueuear_test.cpp priorityqueuear.h)

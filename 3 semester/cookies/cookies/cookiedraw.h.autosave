@@ -1,0 +1,15 @@
+#ifndef COOKIEDRAW_H
+#define COOKIEDRAW_H
+
+#include <QLabel>
+
+
+class cookiedraw : public QLabel
+{
+public:
+    cookiedraw();
+    
+    
+};
+
+#endif // COOKIEDRAW_H
